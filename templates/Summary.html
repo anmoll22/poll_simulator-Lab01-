@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary</title>
+</head>
+<body>
+<p aling="right"><a href="/Home"><button>Home</button></a></p>
+<center>
+    <h1>Voting Summary</h1>
+    <table style="width:50%" border = "2" >
+        <tr>
+            <th>Candidate Name</th>
+            <th>No Of Votes</th>
+        </tr>
+        {% if countDB %}
+        {% for candidate in countDB.keys() %}
+             {% for counts in countDB.values() %}
+        <tr>
+            <td><center>{{ candidate }}</center></td>
+            <td><center> {{ counts }} </center></td>
+        </tr>
+        {% endfor %} {% endfor %}
+        {% else %}
+            <p>No candidates registered</p>
+        {% endif %}
+</table>
+</center>
+</body>
+</html>

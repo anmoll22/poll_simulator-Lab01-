@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote</title>
+</head>
+<body>
+<p aling="right"><a href="/Home"><button>Home</button></a></p>
+{% if err %}
+    <p style="color:red;">{{ err }}</p>
+{% endif %}
+<h1> Vote here</h1>
+{% if candidateDB %}
+<form method="post">
+    <center>
+        <label>Student ID:</label>
+        <input type="number" name="voterID"><br><br>
+
+        {% for candidate in candidateDB.values() %}
+            <input type="radio" name="Candidate" values="{{ candidate }}"/>{{ candidate }}<br><br>
+        {% endfor %}
+        <button type="submit">Vote</button>&nbsp
+        <input type="reset" value="Clear">
+    </center>
+</form>
+{% else %}
+<p>No candidates registered</p>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Candidate</title>
+</head>
+<body>
+<p aling="right"><a href="/Home"><button>Home</button></a></p>
+{% if err %}
+    <p style="color:red;">{{ err }}</p>
+{% endif %}
+<form method="post">
+    <center>
+        <h1>Register Candidate</h1>
+        <label>Candidate name:</label>
+      <input type="text" id="Name" name="Name"><br><br>
+
+        <label>Candidate ID:</label>
+      <input type="number" id="id" name="id"><br><br>
+
+        <input type="submit" value="Submit">&nbsp
+        <input type="reset" value="Clear">
+    </center>
+</form>
+</body>
+</html>
